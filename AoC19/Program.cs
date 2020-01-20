@@ -10,8 +10,11 @@ namespace AoC19
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("hello world");
-            Console.WriteLine(Day2.testCode(Day2.readIntCode("../../inputD2.txt"), 19690720));
+            string s = "hello world";
+            Console.WriteLine(s);
+            //Console.WriteLine(Day2.testCode(Day2.readIntCode("../../inputD2.txt"), 19690720));
+            Console.WriteLine(Day3.Challenge("../../inputD3.txt"));
+
             Console.ReadLine();
         }
     }

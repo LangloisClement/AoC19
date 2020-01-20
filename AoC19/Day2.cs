@@ -8,7 +8,7 @@ namespace AoC19
 {
     class Day2
     {
-        public static int[] readIntCode(string InputAddr)
+        public static int[] ReadIntCode(string InputAddr)
         {
             int[] r;
             if (!System.IO.File.Exists(InputAddr)) r = new int[0];
@@ -25,7 +25,7 @@ namespace AoC19
             return r;
         }
 
-        static void opCode(int[] intCode)
+        static void OpCode(int[] intCode)
         {
             bool boucle = true;
             for (int i = 0; i < intCode.Length; i += 4)
@@ -50,7 +50,7 @@ namespace AoC19
             }
         }
 
-        static void afficheIntCode(int[] intCode)
+        static void AfficheIntCode(int[] intCode)
         {
             for (int i = 0; i < intCode.Length; i += 4)
             {
@@ -62,13 +62,14 @@ namespace AoC19
             }
         }
 
-        static int[] copieTab(int[] t)
+        static int[] CopieTab(int[] t)
         {
             int[] r = new int[t.Length];
             for (int i = 0; i < t.Length; i++) r[i] = t[i];
             return r;
         }
-        public static int testCode(int[] intCode, int value)
+
+        public static int TestCode(int[] intCode, int value)
         {
             int r = -1;
             int[] copie;
@@ -77,10 +78,10 @@ namespace AoC19
             {
                 for (int j = 0; j < 100; j++)
                 {
-                    copie = copieTab(intCode);
+                    copie = CopieTab(intCode);
                     copie[1] = i;
                     copie[2] = j;
-                    opCode(copie);
+                    OpCode(copie);
                     Console.WriteLine(100 * i + j);
                     if (copie[0] == value)
                     {
